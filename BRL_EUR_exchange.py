@@ -13,6 +13,7 @@ formatted_hour = datetime.datetime.strftime(hour, "%H:%M")
 gap_to_check = datetime.timedelta(minutes=20)
 timeout = hour + gap_to_check
 
+
 # MAIN SCRIPT
 while formatted_hour < HOUR_TO_STOP:
     if datetime.datetime.now() > timeout:
@@ -21,10 +22,12 @@ while formatted_hour < HOUR_TO_STOP:
         driver.maximize_window()
         time.sleep(3)
         cotacao = driver.find_element(By.CSS_SELECTOR, "div.amount")
-        print(cotacao.text)
+        print({cotacao.text} - {datetime.datetime.now()})
         time.sleep(5)
         driver.quit()
         timeout += gap_to_check
         print(timeout)
+
+print(f"Finalizando programa e cotação fechou em {cotacao.text}")
 
 # TODO Criar lista de cotações para cada dia e alerta para determinado valor ou percentual
