@@ -5,8 +5,8 @@ import datetime, time
 
 # GLOBAL CONSTANT
 CHROME_DRIVER_PATH = Service("/Users/rodrigocamila/PycharmProjects/chromedriver")
-HOUR_TO_STOP = "16:25"
-GAP_TO_CHECK = datetime.timedelta(minutes=2)
+HOUR_TO_STOP = "21:00"
+GAP_TO_CHECK = datetime.timedelta(minutes=15)
 
 # TIME TO CHECK
 check_time = datetime.datetime.now() + GAP_TO_CHECK
