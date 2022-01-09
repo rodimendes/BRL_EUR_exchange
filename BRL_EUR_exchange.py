@@ -5,7 +5,7 @@ import datetime, time
 
 # GLOBAL CONSTANT
 CHROME_DRIVER_PATH = Service("/Users/rodrigocamila/PycharmProjects/chromedriver")
-HOUR_TO_STOP = "16:10"
+HOUR_TO_STOP = "16:25"
 GAP_TO_CHECK = datetime.timedelta(minutes=2)
 
 # TIME TO CHECK
@@ -31,6 +31,7 @@ while True:
         check_time += GAP_TO_CHECK
         print(currency_quote)
 
-print(f"Finalizando programa e cotação fechou em {currency_quote.keys()}")
+last_value = list(currency_quote.values())
+print(f"Finalizando programa e cotação fechou em {last_value[-1]}")
 
 # TODO Criar lista de cotações para cada dia e alerta para determinado valor ou percentual
